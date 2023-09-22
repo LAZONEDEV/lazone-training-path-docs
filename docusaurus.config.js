@@ -11,15 +11,15 @@ const config = {
   favicon: 'img/logo_noir.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://lazonedev.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/lazone-training-path-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'LaZone', // Usually your GitHub org/user name.
-  projectName: 'Learning path', // Usually your repo name.
+  organizationName: 'LAZONEDEV', // Usually your GitHub org/user name.
+  projectName: 'lazone-training-path-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
