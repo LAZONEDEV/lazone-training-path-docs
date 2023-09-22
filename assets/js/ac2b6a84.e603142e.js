@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[3976],{9412:a=>{a.exports=JSON.parse('{"label":"hello","permalink":"/lazone-training-path-docs/blog/tags/hello","allTagsPath":"/lazone-training-path-docs/blog/tags","count":2}')}}]);
