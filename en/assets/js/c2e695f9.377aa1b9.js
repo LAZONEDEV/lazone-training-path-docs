@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[9598],{2248:a=>{a.exports=JSON.parse('{"permalink":"/lazone-training-path-docs/en/blog/tags/hola","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
