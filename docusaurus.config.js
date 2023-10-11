@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'LaZone learning path',
-  tagline: 'Learning path',
-  favicon: 'img/logo_noir.png',
+  title: 'LaZone',
+  tagline: 'Entre dans la zone',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
   url: 'https://lazonedev.github.io',
@@ -18,8 +18,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'LAZONEDEV', // Usually your GitHub org/user name.
+  organizationName: 'lazonedev', // Usually your GitHub org/user name.
   projectName: 'lazone-training-path-docs', // Usually your repo name.
+  githubHost: "github.com",
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -64,7 +65,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'LaZone Learning path',
+        title: 'LaZone',
         logo: {
           alt: 'la-zone-logo',
           src: 'img/logo.svg',
