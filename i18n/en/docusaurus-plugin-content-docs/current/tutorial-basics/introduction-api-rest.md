@@ -1,108 +1,108 @@
 ---
 sidebar_position: 3
-title: Comprendre les API REST
+title: Understanding REST APIs
 ---
 
-# Comprendre les API REST
+# Understanding REST APIs
 
-## Introduction aux API REST
+## Introduction to REST APIs
 
-Les API REST (Representational State Transfer) sont un style d'architecture pour la conception de services web. Elles reposent sur des principes fondamentaux qui les rendent simples, évolutives et faciles à comprendre. Voici les concepts clés :
+REST APIs (Representational State Transfer) are an architectural style for designing web services. They rely on fundamental principles that make them simple, scalable, and easy to understand. Here are the key concepts:
 
-### Ressources
+### Resources
 
-Une ressource est une entité que vous pouvez manipuler via l'API. Cela peut être un objet, une donnée, ou même un service.
+A resource is an entity that you can manipulate via the API. This can be an object, data, or even a service.
 
 ### URI (Uniform Resource Identifier)
 
-Chaque ressource est identifiée de manière unique par une URI. Par exemple, pour une ressource utilisateur, l'URI pourrait être `/utilisateurs`.
+Each resource is uniquely identified by a URI. For example, for a user resource, the URI could be `/users`.
 
-### Méthodes HTTP
+### HTTP Methods
 
-Les méthodes HTTP (GET, POST, PUT, DELETE, etc.) sont utilisées pour effectuer des actions sur les ressources. Par exemple, l'utilisation de GET sur `/utilisateurs` peut récupérer la liste des utilisateurs.
+HTTP methods (GET, POST, PUT, DELETE, etc.) are used to perform actions on resources. For example, using GET on `/users` can retrieve the list of users.
 
-### Représentations
+### Representations
 
-Les données d'une ressource peuvent être représentées dans différents formats tels que JSON, XML, HTML, etc.
+The data of a resource can be represented in different formats such as JSON, XML, HTML, etc.
 
-## Exemple d'API REST Simple
+## Example of a Simple REST API
 
-Considérons une API pour la gestion d'une liste de tâches.
+Let's consider an API for managing a task list.
 
-### Ressource : Tâches
+### Resource: Tasks
 
-- **URI de la collection :** `/taches`
-- **Méthodes :**
-  - `GET` récupère la liste des tâches.
-  - `POST` crée une nouvelle tâche.
+- **Collection URI:** `/tasks`
+- **Methods:**
+  - `GET` retrieves the list of tasks.
+  - `POST` creates a new task.
 
-- **URI individuelle :** `/taches/{id}`
-- **Méthodes :**
-  - `GET` récupère les détails d'une tâche spécifique.
-  - `PUT` met à jour une tâche existante.
-  - `DELETE` supprime une tâche.
+- **Individual URI:** `/tasks/{id}`
+- **Methods:**
+  - `GET` retrieves details of a specific task.
+  - `PUT` updates an existing task.
+  - `DELETE` deletes a task.
 
-## Interaction avec l'API REST
+## Interacting with the REST API
 
-### Récupérer la Liste des Tâches
+### Retrieve List of Tasks
 
-- **Méthode :** `GET`
-- **URI :** `/taches`
-- **Exemple de Réponse (JSON) :**
+- **Method:** `GET`
+- **URI:** `/tasks`
+- **Example Response (JSON):**
   ```json
   [
-    {"id": 1, "titre": "Faire les courses"},
-    {"id": 2, "titre": "Apprendre les API REST"}
+    {"id": 1, "title": "Go grocery shopping"},
+    {"id": 2, "title": "Learn REST API concepts"}
   ]
   ```
 
-### Créer une Nouvelle Tâche
+### Create a New Task
 
-- **Méthode :** `POST`
-- **URI :** `/taches`
-- **Corps de la Requête (JSON) :**
+- **Method:** `POST`
+- **URI:** `/tasks`
+- **Request Body (JSON):**
   ```json
-  {"titre": "Rédiger un tutoriel sur les API REST"}
+  {"title": "Write a tutorial on REST APIs"}
   ```
-- **Exemple de Réponse (JSON) :**
+- **Example Response (JSON):**
   ```json
-  {"id": 3, "titre": "Répéter les concepts REST"}
-  ```
-
-### Récupérer les Détails d'une Tâche
-
-- **Méthode :** `GET`
-- **URI :** `/taches/3`
-- **Exemple de Réponse (JSON) :**
-  ```json
-  {"id": 3, "titre": "Répéter les concepts REST"}
+  {"id": 3, "title": "Review REST concepts"}
   ```
 
-### Mettre à Jour une Tâche Existante
+### Retrieve Details of a Task
 
-- **Méthode :** `PUT`
-- **URI :** `/taches/3`
-- **Corps de la Requête (JSON) :**
+- **Method:** `GET`
+- **URI:** `/tasks/3`
+- **Example Response (JSON):**
   ```json
-  {"titre": "Répéter les concepts REST une fois de plus"}
+  {"id": 3, "title": "Review REST concepts"}
   ```
 
-### Supprimer une Tâche
+### Update an Existing Task
 
-- **Méthode :** `DELETE`
-- **URI :** `/taches/3`
-- **Réponse (Pas de Corps) :** `204 No Content`
+- **Method:** `PUT`
+- **URI:** `/tasks/3`
+- **Request Body (JSON):**
+  ```json
+  {"title": "Review REST concepts once more"}
+  ```
 
-## Outils pour Tester les API REST
+### Delete a Task
+
+- **Method:** `DELETE`
+- **URI:** `/tasks/3`
+- **Response (No Body):** `204 No Content`
+
+## Tools for Testing REST APIs
 
 ### Postman
 
-Postman est un outil convivial pour tester les requêtes et les réponses d'une API. Vous pouvez créer des requêtes pour chaque méthode HTTP et voir les réponses.
+Postman is a user-friendly tool for testing API requests and responses. You can create requests for each HTTP method and see the responses.
 
-### Curl
+### cURL
 
-Curl est un outil en ligne de commande qui permet d'envoyer des requêtes HTTP directement depuis le terminal.
+cURL is a command-line tool that allows you to send HTTP requests directly from the terminal.
 
 ## Conclusion
 
-Comprendre les principes de base des API REST est essentiel pour travailler dans le développement moderne. Continuez à explorer, à tester et à pratiquer pour maîtriser l'utilisation des API REST dans vos projets.
+Understanding the basic principles of REST APIs is essential for working in modern development. Continue to explore, test, and practice to master the use of REST APIs in your projects.

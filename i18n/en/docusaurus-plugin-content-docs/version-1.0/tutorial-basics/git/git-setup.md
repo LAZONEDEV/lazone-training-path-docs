@@ -1,105 +1,105 @@
 ---
 sidebar_position: 1
-title: Installer et démarrer avec git
+title: Installing and Getting Started with Git
 ---
 
-# Installer et Démarrer avec Git
+# Installing and Getting Started with Git
 
-## Étape 1 : Installation de Git
+## Step 1: Installing Git
 
 ### Windows
 
-1. Téléchargez l'installateur Git depuis le site officiel : [Git for Windows](https://gitforwindows.org/).
-2. Exécutez l'installateur téléchargé et suivez les instructions par défaut.
-3. Choisissez l'éditeur de texte que vous souhaitez utiliser avec Git (par exemple, Notepad++, Visual Studio Code) lors de l'installation.
+1. Download the Git installer from the official website: [Git for Windows](https://gitforwindows.org/).
+2. Run the downloaded installer and follow the default instructions.
+3. Choose the text editor you want to use with Git (e.g., Notepad++, Visual Studio Code) during the installation.
 
 ### MacOS
 
-1. Sur MacOS, vous pouvez installer Git à l'aide de [Homebrew](https://brew.sh/), un gestionnaire de paquets. Ouvrez Terminal et exécutez la commande suivante :
+1. On MacOS, you can install Git using [Homebrew](https://brew.sh/), a package manager. Open Terminal and run the following command:
    ```bash
    brew install git
    ```
 
 ### Linux
 
-1. Sur les distributions basées sur Debian (comme Ubuntu), utilisez le gestionnaire de paquets :
+1. On Debian-based distributions (like Ubuntu), use the package manager:
    ```bash
    sudo apt-get update
    sudo apt-get install git
    ```
 
-2. Sur les distributions basées sur Red Hat (comme Fedora), utilisez :
+2. On Red Hat-based distributions (like Fedora), use:
    ```bash
    sudo dnf install git
    ```
 
-## Étape 2 : Configuration de Git
+## Step 2: Configuring Git
 
-1. Ouvrez votre terminal (ou invite de commande pour Windows).
-2. Configurez votre nom d'utilisateur avec la commande :
+1. Open your terminal (or command prompt for Windows).
+2. Configure your username with the command:
    ```bash
-   git config --global user.name "Votre Nom"
+   git config --global user.name "Your Name"
    ```
 
-3. Configurez votre adresse e-mail avec la commande :
+3. Configure your email address with the command:
    ```bash
-   git config --global user.email "votre@email.com"
+   git config --global user.email "your@email.com"
    ```
 
-## Étape 3 : Création d'un nouveau dépôt Git
+## Step 3: Creating a New Git Repository
 
-1. Créez un nouveau dossier pour votre projet et accédez-y via le terminal.
+1. Create a new folder for your project and navigate to it via the terminal.
    ```bash
-   mkdir mon_projet
-   cd mon_projet
+   mkdir my_project
+   cd my_project
    ```
 
-2. Initialisez un nouveau dépôt Git dans ce dossier.
+2. Initialize a new Git repository in this folder.
    ```bash
    git init
    ```
 
-## Étape 4 : Ajout de fichiers au suivi de Git
+## Step 4: Adding Files to Git Tracking
 
-1. Ajoutez un fichier à votre projet (par exemple, `index.html`).
-2. Ajoutez le fichier au suivi de Git.
+1. Add a file to your project (e.g., `index.html`).
+2. Add the file to Git tracking.
    ```bash
    git add index.html
    ```
 
-## Étape 5 : Effectuer un commit
+## Step 5: Making a Commit
 
-1. Effectuez un commit pour enregistrer les modifications.
+1. Make a commit to save the changes.
    ```bash
-   git commit -m "Premier commit : ajout de index.html"
+   git commit -m "First commit: added index.html"
    ```
 
-## Étape 6 : Opérations courantes
+## Step 6: Common Operations
 
-- **Vérifier l'état du dépôt :**
+- **Check the repository status:**
   ```bash
   git status
   ```
 
-- **Voir l'historique des commits :**
+- **View commit history:**
   ```bash
   git log
   ```
 
-- **Modifier un fichier et effectuer un nouveau commit :**
+- **Modify a file and make a new commit:**
   ```bash
-  git add fichier_modifié
-  git commit -m "Description du changement"
+  git add modified_file
+  git commit -m "Description of the change"
   ```
 
-- **Récupérer les dernières modifications depuis le dépôt distant :**
+- **Fetch the latest changes from the remote repository:**
   ```bash
   git pull origin master
   ```
 
-- **Envoyer vos commits vers le dépôt distant :**
+- **Push your commits to the remote repository:**
   ```bash
   git push origin master
   ```
 
-Félicitations ! Vous avez maintenant installé Git, configuré votre identité, créé un dépôt local, et effectué vos premiers commits. Explorez davantage les fonctionnalités avancées de Git pour tirer le meilleur parti de ce puissant outil de gestion de version.
+Congratulations! You have now installed Git, configured your identity, created a local repository, and made your first commits. Explore further the advanced features of Git to make the most of this powerful version control tool.

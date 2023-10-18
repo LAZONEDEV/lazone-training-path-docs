@@ -1,84 +1,84 @@
 ---
 sidebar_position: 3
-title: Git convention
+title: Git Convention
 ---
 
-# Règles générales
+# General Rules
 
-### 1. Tester avant de commit
+### 1. Test Before Committing
 
-Il est crucial de résister à la tentation de committer un code que l'on "pense" être fonctionnel. Avant de committer, effectuez des tests méticuleux pour garantir le bon fonctionnement et éviter les effets secondaires non désirés.
+It is crucial to resist the temptation to commit code that is "thought" to be functional. Before committing, conduct meticulous tests to ensure proper functionality and avoid unintended side effects.
 
-## 2. Avoir un commit atomique
+## 2. Have an Atomic Commit
 
-Un commit atomique se concentre sur un seul sujet. Par exemple, résoudre deux bugs différents devrait résulter en deux commits distincts. Cela facilite la compréhension des changements par l'équipe et permet des rollbacks ciblés en cas de problème.
+An atomic commit focuses on a single subject. For example, fixing two different bugs should result in two distinct commits. This makes it easier for the team to understand changes and allows targeted rollbacks in case of issues.
 
-## 3. Faire des commits réguliers
+## 3. Make Regular Commits
 
-Des commits réguliers maintiennent un historique clair, atomique et facile à intégrer. Évitez les commits volumineux partagés rarement pour faciliter la collaboration et minimiser les conflits.
+Regular commits maintain a clear, atomic, and easily integrable history. Avoid infrequent large commits to facilitate collaboration and minimize conflicts.
 
-## 4. Ne pas faire de commit non fonctionnel
+## 4. Avoid Non-functional Commits
 
-Évitez les commits de changements non fonctionnels, incomplets ou qui ne font pas compiler le projet. Utilisez plutôt un [stash](https://git-scm.com/docs/git-stash) pour maintenir un répertoire de travail propre.
+Avoid commits of non-functional, incomplete, or code-breaking changes. Instead, use [stash](https://git-scm.com/docs/git-stash) to keep a clean working directory.
 
-## 5. Avoir un titre de commit descriptif
+## 5. Have a Descriptive Commit Title
 
-Des titres de commits informatifs facilitent la compréhension des changements. Évitez les titres vagues ; décrivez clairement le contenu du commit.
+Informative commit titles ease understanding of changes. Avoid vague titles; clearly describe the commit content.
 
-## 6. Ajouter du contexte à son commit dans le body
+## 6. Add Context to Your Commit in the Body
 
-Associez un body à votre commit pour fournir des détails et du contexte. Cela facilite la compréhension des changements, même des mois plus tard.
+Attach a body to your commit to provide details and context. This facilitates understanding of changes, even months later.
 
-## 7. Ressortir ultimement dans le contexte qu'est-ce qui a changé et pourquoi
+## 7. Ultimately Stand Out in the Context of What Changed and Why
 
-Répondez aux questions "Qu'est-ce qui a changé ?" et "Pourquoi cela a changé ?" dans le body du commit sans répéter le code lui-même.
+Answer the questions "What changed?" and "Why did it change?" in the commit body without repeating the code itself.
 
-## 8. Ne pas avoir de bloc de code commenté
+## 8. Avoid Commented-out Code Blocks
 
-Évitez les blocs de code commenté dans les commits, car ils sont considérés comme des changements superflus.
+Avoid commented-out code blocks in commits, as they are considered unnecessary changes.
 
-# Règles de formatage
+# Formatting Rules
 
-## 1. Utiliser les conventions conventionalcommits
+## 1. Use Conventional Commits Conventions
 
-Les commits suivront les spécifications de [conventionalcommits](https://www.conventionalcommits.org/).
+Commits will follow the specifications of [conventionalcommits](https://www.conventionalcommits.org/).
 
-## 2. Types de commits supplémentaires
+## 2. Additional Commit Types
 
-En plus des types spécifiés par [conventionalcommits](https://www.conventionalcommits.org/), utilisez les types dérivés de la convention [Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type).
+In addition to types specified by [conventionalcommits](https://www.conventionalcommits.org/), use types derived from the [Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type) convention.
 
-- **build**: changements affectant le build ou les dépendances externes (exemples : gulp, broccoli, npm)
-- **ci**: changements aux fichiers de configuration CI et scripts (exemple de scopes : Travis, Circle, BrowserStack, SauceLabs).
-- **docs**: changements sur la documentation.
-- **perf**: changements résultant à une amélioration des performances.
-- **refactor**: changements ne résolvant pas un bug et n'ajoutant pas de fonctionnalité.
-- **style**: changements n’affectant pas le sens du code (espaces, formattage, point-virgules manquants, etc)
-- **test**: changements pour l'ajout de tests ou la modification de tests existants.
+- **build**: changes affecting the build or external dependencies (examples: gulp, broccoli, npm)
+- **ci**: changes to CI configuration files and scripts (scopes example: Travis, Circle, BrowserStack, SauceLabs).
+- **docs**: changes to documentation.
+- **perf**: changes resulting in performance improvement.
+- **refactor**: changes not fixing a bug and not adding a feature.
+- **style**: changes not affecting the code's meaning (spaces, formatting, missing semicolons, etc.)
+- **test**: changes for adding tests or modifying existing tests.
 
-## 3. Limiter le titre du commit
+## 3. Limit Commit Title Length
 
-Limitez le titre du commit à 50 caractères idéalement. La limite stricte est de 72 caractères. Évitez le contenu superflu pour rester concis.
+Limit the commit title to ideally 50 characters. The strict limit is 72 characters. Avoid superfluous content to remain concise.
 
-## 4. Ne pas terminer le titre avec une ponctuation
+## 4. Do Not End the Title with Punctuation
 
-Le titre du commit ne doit pas se terminer par une ponctuation.
+The commit title should not end with punctuation.
 
-## 5. Avoir un titre à la forme impérative
+## 5. Have an Imperative Form Title
 
-Utilisez la forme impérative pour décrire le but du commit de manière claire et concise.
+Use the imperative form to describe the commit's purpose clearly and concisely.
 
-## 6. Séparer le titre du commit d'un saut de ligne
+## 6. Separate Commit Title with a Line Break
 
-Séparez le titre du commit du body par un saut de ligne, sauf s'il n'y a pas de body.
+Separate the commit title from the body with a line break unless there is no body.
 
-## 7. Limiter les lignes du body
+## 7. Limit Body Lines
 
-Limitez les lignes du body du commit à 72 caractères pour faciliter la lisibilité.
+Limit commit body lines to 72 characters for readability.
 
-## 8. Utiliser les tirets pour les listes
+## 8. Use Hyphens for Lists
 
-Utilisez le tiret (-) entre deux espaces pour les listes dans le body du commit.
+Use a hyphen (-) with two spaces for lists in the commit body.
 
-## 9. Utiliser la forme impersonnelle
+## 9. Use Impersonal Form
 
-Évitez l'usage des pronoms personnels (je, tu, etc.) dans le titre et le body du commit. Préférez la forme impersonnelle ou passive.
+Avoid using personal pronouns (I, you, etc.) in the commit title and body. Prefer the impersonal or passive form.

@@ -1,148 +1,148 @@
 ---
 sidebar_position: 4
-title: Comprendre les API Graphql
+title: Understanding GraphQL APIs
 ---
 
-# Introduction aux API GraphQL
+# Introduction to GraphQL APIs
 
-## Comprendre GraphQL
+## Understanding GraphQL
 
-GraphQL est un langage de requête et un serveur d'exécution pour les API, créé par Facebook. Il permet aux clients de spécifier exactement les données dont ils ont besoin et rien de plus. Voici les concepts clés :
+GraphQL is a query language and an execution server for APIs, created by Facebook. It allows clients to specify exactly the data they need and nothing more. Here are the key concepts:
 
-### Schéma GraphQL
+### GraphQL Schema
 
-Un schéma définit les types de données disponibles et les relations entre eux. Il sert de contrat entre le client et le serveur.
+A schema defines the types of data available and the relationships between them. It serves as a contract between the client and the server.
 
-Exemple de schéma GraphQL pour une application de blog :
+Example GraphQL schema for a blog application:
 ```graphql
 type Article {
   id: ID!
-  titre: String!
-  contenu: String!
-  auteur: Utilisateur!
+  title: String!
+  content: String!
+  author: User!
 }
 
-type Utilisateur {
+type User {
   id: ID!
-  nom: String!
+  name: String!
   articles: [Article!]!
 }
 
 type Query {
   articles: [Article!]!
-  utilisateur(id: ID!): Utilisateur!
+  user(id: ID!): User!
 }
 ```
 
-### Requêtes GraphQL
+### GraphQL Queries
 
-Les clients envoient des requêtes GraphQL pour demander des données spécifiques. La requête ressemble à la forme des données souhaitées.
+Clients send GraphQL queries to request specific data. The query resembles the shape of the desired data.
 
-Exemple de requête GraphQL :
+Example GraphQL query:
 ```graphql
 query {
   articles {
-    titre
-    contenu
-    auteur {
-      nom
+    title
+    content
+    author {
+      name
     }
   }
 }
 ```
 
-### Mutations GraphQL
+### GraphQL Mutations
 
-Les mutations sont utilisées pour effectuer des modifications sur les données du serveur, comme la création, la mise à jour ou la suppression.
+Mutations are used to make modifications to server data, such as creating, updating, or deleting.
 
-Exemple de mutation GraphQL :
+Example GraphQL mutation:
 ```graphql
 mutation {
-  creerArticle(titre: "Nouvel Article", contenu: "Contenu de l'article", auteurId: "1") {
+  createArticle(title: "New Article", content: "Article content", authorId: "1") {
     id
-    titre
-    contenu
+    title
+    content
   }
 }
 ```
 
-## Exemple d'API GraphQL Simple
+## Example of a Simple GraphQL API
 
-Considérons une API GraphQL pour une bibliothèque.
+Let's consider a GraphQL API for a library.
 
-### Schéma GraphQL
+### GraphQL Schema
 
 ```graphql
-type Livre {
+type Book {
   id: ID!
-  titre: String!
-  auteur: String!
+  title: String!
+  author: String!
 }
 
 type Query {
-  livres: [Livre!]!
-  livre(id: ID!): Livre!
+  books: [Book!]!
+  book(id: ID!): Book!
 }
 
 type Mutation {
-  ajouterLivre(titre: String!, auteur: String!): Livre!
-  supprimerLivre(id: ID!): ID!
+  addBook(title: String!, author: String!): Book!
+  deleteBook(id: ID!): ID!
 }
 ```
 
-### Requêtes et Mutations GraphQL
+### GraphQL Queries and Mutations
 
-#### Récupérer la Liste des Livres
+#### Retrieve List of Books
 
 ```graphql
 query {
-  livres {
-    titre
-    auteur
+  books {
+    title
+    author
   }
 }
 ```
 
-#### Récupérer un Livre Spécifique
+#### Retrieve a Specific Book
 
 ```graphql
 query {
-  livre(id: "1") {
-    titre
-    auteur
+  book(id: "1") {
+    title
+    author
   }
 }
 ```
 
-#### Ajouter un Nouveau Livre
+#### Add a New Book
 
 ```graphql
 mutation {
-  ajouterLivre(titre: "GraphQL 101", auteur: "Auteur Inconnu") {
-    titre
-    auteur
+  addBook(title: "GraphQL 101", author: "Unknown Author") {
+    title
+    author
   }
 }
 ```
 
-#### Supprimer un Livre
+#### Delete a Book
 
 ```graphql
 mutation {
-  supprimerLivre(id: "1")
+  deleteBook(id: "1")
 }
 ```
 
-## Outils pour Tester les API GraphQL
+## Tools for Testing GraphQL APIs
 
 ### GraphiQL
 
-GraphiQL est une interface interactive pour explorer et tester les API GraphQL. Elle est souvent intégrée dans les serveurs GraphQL.
+GraphiQL is an interactive interface for exploring and testing GraphQL APIs. It is often integrated into GraphQL servers.
 
 ### Insomnia
 
-Insomnia est un outil de test d'API qui prend en charge GraphQL. Vous pouvez y envoyer des requêtes et voir les réponses de manière claire.
+Insomnia is an API testing tool that supports GraphQL. You can send requests and see responses in a clear manner.
 
 ## Conclusion
 
-GraphQL offre une flexibilité accrue par rapport aux API REST en permettant aux clients de spécifier exactement les données dont ils ont besoin. Explorez, testez et pratiquez pour bien comprendre et maîtriser l'utilisation des API GraphQL dans vos projets.
+GraphQL provides increased flexibility compared to REST APIs by allowing clients to specify exactly the data they need. Explore, test, and practice to fully understand and master the use of GraphQL APIs in your projects.

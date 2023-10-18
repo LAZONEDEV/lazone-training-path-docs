@@ -1,68 +1,68 @@
 ---
 sidebar_position: 2
-title: Git avec un projet existant
+title: Git with an Existing Project
 ---
 
-# Travaillez avec un projet existant
+# Working with an Existing Project
 
 ## Git Clone
 
-Lorsque vous souhaitez travailler sur un projet existant, vous utilisez la commande `git clone` pour créer une copie locale du dépôt distant sur votre machine.
+When you want to work on an existing project, you use the `git clone` command to create a local copy of the remote repository on your machine.
 
-1. Naviguez vers le répertoire où vous souhaitez cloner le projet.
+1. Navigate to the directory where you want to clone the project.
    ```bash
-   cd chemin/vers/le/repertoire
+   cd path/to/directory
    ```
 
-2. Clonez le dépôt en utilisant la commande `git clone` avec l'URL du dépôt :
+2. Clone the repository using the `git clone` command with the repository URL:
    ```bash
-   git clone https://lien-vers-le-depot.git
+   git clone https://repository-link.git
    ```
 
-Cela créera un répertoire avec le nom du projet dans votre répertoire actuel, contenant tous les fichiers du dépôt. Vous aurez ainsi une copie locale prête à être modifiée.
+This will create a directory with the project name in your current directory, containing all the files from the repository. You now have a local copy ready to be modified.
 
 ## Git Status
 
-La commande `git status` est utilisée pour afficher l'état des fichiers dans votre répertoire de travail par rapport au dernier commit.
+The `git status` command is used to display the status of files in your working directory relative to the last commit.
 
-1. Naviguez vers le répertoire du projet cloné.
+1. Navigate to the cloned project directory.
    ```bash
-   cd chemin/vers/le/projet
+   cd path/to/project
    ```
 
-2. Exécutez la commande `git status` :
+2. Run the `git status` command:
    ```bash
    git status
    ```
 
-Cette commande vous montrera les fichiers modifiés, les fichiers prêts à être commités, et d'autres informations utiles sur l'état de votre dépôt.
+This command will show you modified files, files ready to be committed, and other useful information about the state of your repository.
 
 ## Git Rebase
 
-La commande `git rebase` est utilisée pour intégrer les modifications d'une branche sur une autre. Cela est souvent utilisé pour maintenir un historique de commits propre et linéaire.
+The `git rebase` command is used to integrate changes from one branch onto another. This is often used to maintain a clean and linear commit history.
 
-1. Assurez-vous d'être sur la branche que vous souhaitez mettre à jour.
+1. Make sure you are on the branch you want to update.
    ```bash
-   git checkout ma_branche
+   git checkout my_branch
    ```
 
-2. Effectuez un rebase avec la branche cible (par exemple, `master`) :
+2. Perform a rebase with the target branch (e.g., `master`):
    ```bash
    git rebase master
    ```
 
-3. Résolvez les éventuels conflits s'il y en a, suivez les instructions de Git.
+3. Resolve any conflicts if there are any; follow Git's instructions.
 
-4. Après avoir résolu les conflits, continuez le rebase :
+4. After resolving conflicts, continue the rebase:
    ```bash
    git rebase --continue
    ```
 
-5. Une fois le rebase terminé, mettez à jour la branche distante :
+5. Once the rebase is complete, update the remote branch:
    ```bash
-   git push origin ma_branche --force-with-lease
+   git push origin my_branch --force-with-lease
    ```
 
-Attention : Utilisez `--force` avec précaution, car cela réécrit l'historique du dépôt distant.
+Caution: Use `--force` with care as it rewrites the history of the remote repository.
 
-Ces commandes `git clone`, `git status`, et `git rebase` sont des outils essentiels pour travailler efficacement avec Git. Assurez-vous de comprendre comment les utiliser correctement pour une gestion de version optimale.
+These `git clone`, `git status`, and `git rebase` commands are essential tools for working effectively with Git. Make sure you understand how to use them correctly for optimal version control management.
