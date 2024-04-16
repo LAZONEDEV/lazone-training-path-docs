@@ -111,13 +111,67 @@ Applique alors la solution ci-dessus :
 
 ## Etape 3 : Mettre à jour la base de données à travers le service dockerisé **aaz-db**
 
-La dockerisation de la base de donnée nous renvoie une base de donnée vide. Il nous faut donc charger un `dumpfile` dans le service aaz-db pour recupérer les dernières données du projet. Ce dumpfile est généralement fourni par les devs de lazone en cas de besoins. Une fois le dumpfile acquis, suivre la procédure suivante illustré à travers les images ci-dessous :
+Il se peut après la dockerisation de la db vous ayez l'erreur sur l'image suivante :
+
+![Error After DataBase Dockerization](./img/errorDbCreation.png)
+
+Dans ce cas procéder de la façon suivant pour créer la base de données au niveau de conteneur Docker de postgres :
+
+- Ouvrir l'invite de commande;
+- Vérifier que votre conteneur est en cours avec la commande `docker ps`;
+
+![Check Docker Container](./img/checkDockerContainer.png)
+
+Si vous obtenez ce résultat, cela voudrait dire que votre conteneur n'est pas en cours c'est-à-dire que votre base de données n'est pas en cours de fonctionnement. Pour lancer le conteneur :
+
+- Ouvrir Docker Desktop;
+- Démarrer le conteneur de la façon suivante :
+
+![Start Container](./img/startContainer.png)
+
+- Une fois le conteneur en cours, cliquer sur le name du conteneur puis aller dans l'onglet `Exec`:
+
+![Go to Exec Into the Container](./img/openExec.png)
+
+- Puis exécuter le script suivant
+
+  `psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+CREATE DATABASE $database;
+EOSQL`
+
+**NB**: Prennez soin de remplacer "$POSTGRES_USER" et $database respectivement par le nom d'utilisateur de la db et le nom de la db qui se trouve dans le fichier `.env.database` dans le dossier `db` .
+
+![Create Database](./img/createDatabase.png)
+
+**Par ailleurs, si vous avez eu aucune erreur après dockerisation de la base de données, veuillez poursuivre la documentation.**
+
+En effet, la dockerisation de la base de donnée nous renvoie une base de donnée vide. Il nous faut donc charger un `dumpfile` dans le service aaz-db pour recupérer les dernières données du projet. Ce dumpfile est généralement fourni par les devs de lazone en cas de besoins. Une fois le dumpfile acquis, suivre la procédure suivante:
+
+- Télécharger le dumpfile le plus récent de la base de donnée du projet;
+- Ouvrir l'invite de commande, puis se diriger vers le repertoire comportant le dumpfile;
+- Exécuter la commande `docker cp <DUMP_FILE> <ID_DU_CONTENEUR>:docker-entrypoint-initdb.d` :
+
+![Copy Dumpfile to container](./img/copyDumpToContainer.png)
+
+- Exécuter ensuite la commande `docker exec -it <ID_DU_CONTENEUR> bash` :
+
+![Open Container Bash Terminal](./img/openContainerBash.png)
+
+- Suiver ensuite les étapes ci-dessous pour aller dans le répertoire qui comporte le dumpfile et l'importer:
+
+![Inject Dumpfile into DB](./img/injectDumpfile.png)
+
+Enfin, attender la fin du processus pour continuer la documentation.
+
+#### A noter:
+
+Il est souvent fréquent dans les projets de lazone, plus précisement dans le backend d'utiliser des plugins. Il est donc necessaire d'installer les dépendences du plugins avant de pouvoir lancer le backend. Pour vérifier l'existence d'un plugin, suivez le chemin `content/src/plugins`. Si le dossier plugins n'existe pas ou est vide alors cela veut signifier qu'il y a pas de plugin utiliser pour ce projet. Par contre s'il n'est pas vide, alors **Ouvrir un terminal bash dans ce répertoire et lancer la commande** `yarn` ou `yarn install`
 
 ## Etape 4 : Lancer le projet et Vérifier le rendu
 
 Le lancement du projet en local requiert ainsi le lancement de trois differents services :
 
-- Le Frontend;
+- Le Frontend;-
 - Le Backend;
 - Et enfin la Db sur docker.
 
@@ -129,6 +183,8 @@ Pour réaliser cette phase, il faut :
 - Utiliser le terminal pour se déplacer depuis la racine du projet vers le répertoire **content**;
 - Lancer la commande `yarn develop`;
 
+![Launch Backend](./img/launchBackend.png)
+
 ### Phase 2 : Lancement du frontend
 
 Pour réaliser cette étape, il faut :
@@ -136,6 +192,8 @@ Pour réaliser cette étape, il faut :
 - Ouvrir dans `VS-code` un terminal (Git bash est très recommandé);
 - Utiliser le terminal pour se déplacer depuis la racine du projet vers le répertoire **web**;
 - Lancer la commande `yarn dev`;
+
+![Launch FrontEnd](./img/launchFrontend.png)
 
 ### Phase 3 : Lancement de la Db sur docker
 
