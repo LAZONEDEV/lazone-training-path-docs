@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[4252],{1218:e=>{e.exports=JSON.parse('{"permalink":"/lazone-training-path-docs/blog/tags/elementor","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

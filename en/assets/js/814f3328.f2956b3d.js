@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Utilisation des shortcode de WordPress pour l\'affichage de value dynamic dans Elementor","permalink":"/lazone-training-path-docs/en/blog/displaying-dynamic-value-wordpress-elementor"}]}')}}]);

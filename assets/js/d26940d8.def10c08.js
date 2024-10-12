@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[4548],{9270:a=>{a.exports=JSON.parse('{"permalink":"/lazone-training-path-docs/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

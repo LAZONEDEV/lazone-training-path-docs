@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[5628],{3055:e=>{e.exports=JSON.parse('{"permalink":"/lazone-training-path-docs/en/blog/tags/shortcode","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

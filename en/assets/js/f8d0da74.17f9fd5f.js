@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[7916],{6717:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/lazone-training-path-docs/en/blog/tags/facebook","allTagsPath":"/lazone-training-path-docs/en/blog/tags","count":1}')}}]);

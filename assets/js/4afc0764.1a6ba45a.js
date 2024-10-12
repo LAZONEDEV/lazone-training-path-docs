@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklazone_learning_path=self.webpackChunklazone_learning_path||[]).push([[7124],{747:a=>{a.exports=JSON.parse('{"label":"docusaurus","permalink":"/lazone-training-path-docs/blog/tags/docusaurus","allTagsPath":"/lazone-training-path-docs/blog/tags","count":4}')}}]);
