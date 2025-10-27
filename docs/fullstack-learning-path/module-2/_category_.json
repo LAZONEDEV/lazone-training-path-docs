@@ -1,0 +1,8 @@
+{
+  "label": "Module 2: NextJS et écosystème React avancé",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Ce module approfondit NextJS 15 et son écosystème, couvrant les aspects avancés du framework depuis les méthodes de rendu jusqu'aux tests automatisés."
+  }
+}

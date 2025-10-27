@@ -3,10 +3,8 @@ sidebar_position: 1
 title: NextJS Strapi MedusaJs avec Docker compose
 ---
 
-
 # Guide Détaillé du starter: NextJS Strapi MedusaJS avec Docker Compose
 
- 
 ## Configuration des Services dans Docker Compose
 
 Commencez par créer un fichier `docker-compose.yml` en respectant la structure que vous avez fournie pour chaque service. Dans ce guide, nous examinerons chaque service individuellement :
@@ -37,24 +35,24 @@ services:
 Le service Medusa est construit à partir du répertoire `./medusa` avec son fichier d'environnement dans `./medusa/.env`. Le lancement de Medusa est configuré avec la commande `sh -c "yarn seed & yarn dev"`. Assurez-vous que le fichier d'environnement de Medusa contient les informations nécessaires pour la base de données et Redis.
 
 ```yaml
-  medusa:
-    build: ./medusa
-    container_name: medusa
-    env_file:
-      - ./medusa/.env
-    ports:
-      - "9000:9000"
-      - "7001:7001"
-    volumes:
-      - ./medusa/data:/app/data
-      - ./medusa/src:/app/src
-    networks:
-      - app-net
-    command: >
-      sh -c "yarn seed & yarn dev"
-    depends_on:
-      - db
-      - app_redis
+medusa:
+  build: ./medusa
+  container_name: medusa
+  env_file:
+    - ./medusa/.env
+  ports:
+    - "9000:9000"
+    - "7001:7001"
+  volumes:
+    - ./medusa/data:/app/data
+    - ./medusa/src:/app/src
+  networks:
+    - app-net
+  command: >
+    sh -c "yarn seed & yarn dev"
+  depends_on:
+    - db
+    - app_redis
 ```
 
 ### Service Base de Données (`db`)
@@ -62,20 +60,20 @@ Le service Medusa est construit à partir du répertoire `./medusa` avec son fic
 Le service de base de données est construit à partir du répertoire `./db` avec son fichier d'environnement dans `./db/.env.database`. Assurez-vous que ce fichier d'environnement contient les configurations nécessaires pour la base de données PostgreSQL.
 
 ```yaml
-  db:
-    build: ./db
-    container_name: db
-    env_file:
-      - ./db/.env.database
-    expose:
-      - "5432"
-    ports:
-      - "5432:5432"
-    networks:
-      - app-net
-    volumes:
-      - ./db/dbdata:/var/lib/postgresql/data
-      - ./db/initdb.d:/docker-entrypoint-initdb.d
+db:
+  build: ./db
+  container_name: db
+  env_file:
+    - ./db/.env.database
+  expose:
+    - "5432"
+  ports:
+    - "5432:5432"
+  networks:
+    - app-net
+  volumes:
+    - ./db/dbdata:/var/lib/postgresql/data
+    - ./db/initdb.d:/docker-entrypoint-initdb.d
 ```
 
 ### Service Redis (`app_redis`)
@@ -83,15 +81,15 @@ Le service de base de données est construit à partir du répertoire `./db` ave
 Le service Redis est configuré pour utiliser l'image officielle de Redis. Aucun fichier d'environnement n'est spécifié ici, mais vous pouvez ajuster selon vos besoins.
 
 ```yaml
-  app_redis:
-    image: redis
-    container_name: app_redis
-    expose:
-      - "6379"
-    networks:
-      - app-net
-    volumes:
-      - ./redis/redisData:/data
+app_redis:
+  image: redis
+  container_name: app_redis
+  expose:
+    - "6379"
+  networks:
+    - app-net
+  volumes:
+    - ./redis/redisData:/data
 ```
 
 ### Service Web (`app_web`)
@@ -99,20 +97,20 @@ Le service Redis est configuré pour utiliser l'image officielle de Redis. Aucun
 Le service Web est construit à partir du répertoire `./web`. Assurez-vous que votre application Web est correctement configurée dans ce répertoire. Les dépendances sont installées à l'aide de l'entrée `"yarn", "dev"`.
 
 ```yaml
-  app_web:
-    build: ./web
-    container_name: app_web
-    expose:
-      - "3000"
-    ports:
-      - "3000:3000"
-    networks:
-      - app-net
-    volumes:
-      - ./web:/app
-    depends_on:
-      - app_strapi
-    entrypoint: ["yarn", "dev"]
+app_web:
+  build: ./web
+  container_name: app_web
+  expose:
+    - "3000"
+  ports:
+    - "3000:3000"
+  networks:
+    - app-net
+  volumes:
+    - ./web:/app
+  depends_on:
+    - app_strapi
+  entrypoint: ["yarn", "dev"]
 ```
 
 ## Lancement du Projet avec Docker Compose
@@ -138,5 +136,3 @@ Assurez-vous d'exécuter cette commande dans le contexte de votre container Medu
 ```bash
 docker exec -it medusa npx medusa user -e admin@sample.com -p Passpass1
 ```
-
-

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 
-# Parcours de Formation à LaZone
+# Get Started
 
 Bienvenue dans notre parcours de formation Full Stack ! Ce programme a été conçu pour vous fournir les compétences nécessaires afin de devenir un développeur Full Stack compétent et polyvalent. Avant de plonger dans le monde passionnant du développement web, assurons-nous que vous disposez de l'environnement de travail adéquat.
 
@@ -21,7 +21,6 @@ Nous recommandons l'utilisation d'un éditeur de code efficace pour maximiser vo
 Git est un système de contrôle de version essentiel pour collaborer sur des projets et suivre les changements apportés au code. Assurez-vous d'avoir Git installé sur votre machine.
 
 > [Installer Git](https://git-scm.com/)
-
 
 ### Node.js et npm
 

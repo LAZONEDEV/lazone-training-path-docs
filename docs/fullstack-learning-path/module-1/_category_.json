@@ -1,0 +1,8 @@
+{
+  "label": "Module 1: Fondamentaux et environnement de développement",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Ce module couvre les fondamentaux de l'architecture moderne des applications JavaScript et la mise en place d'un environnement de développement professionnel."
+  }
+}
