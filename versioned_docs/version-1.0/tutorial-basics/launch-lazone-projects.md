@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
+title: Procédure de démarrage des projets de lazone sur Windows 11/10
 ---
 
 # Procédure de démarrage des projets de lazone sur Windows 11/10
